@@ -1,0 +1,190 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+
+body {
+  min-height: 75rem;
+  padding-top: 4.5rem;
+  padding-bottom: 20px;
+  font-family: 'Roboto', sans-serif !important;
+}
+
+.navbar {
+  margin-bottom: 20px;
+}
+
+/*The next section of code changes the colors of the navbar - insert navbar-custom
+ in place of navbar-dark and remove bg-dark to use this*/
+
+/* change the custom navbar background color*/
+.navbar-custom {
+    background-color: #F8F8F8;
+}
+
+/* change the navbar brand and text color */
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+    color: rgba(255,255,255,.8);
+}
+/* change the link color */
+.navbar-custom .navbar-nav .nav-link {
+    color: rgba(255,255,255,.5);
+}
+/* change the color of active or hovered links */
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+    color: #ffffff;
+}
+
+/* change the custom navbar background color by including bg-bh 
+ in place of bg-dark*/
+.bg-bh {
+    background-color: darkred;
+}
+
+.jumbotron {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  margin-bottom: 0;
+  background-color: #fff;
+}
+
+@media (min-width: 768px) {
+  .jumbotron {
+    padding-top: 2rem;
+    padding-bottom: 2rem);
+  }
+}
+
+.jumbotron p:last-child {
+  margin-bottom: 0;
+}
+
+.jumbotron-heading {
+  font-weight: 300;
+}
+
+.jumbotron .container {
+  max-width: 40rem;
+}
+
+.starter-template {
+  padding-top: 0.75rem;
+  padding-bottom: 3rem;
+}
+
+.word-recall {
+  padding-top: 0.75rem;
+  padding-bottom: 1rem;
+}
+
+#question {
+  padding-top: 4.25rem;
+  padding-bottom: 1rem;
+  vertical-align: middle;
+  min-height: 10rem;
+  max-width: 50rem;
+}
+
+#answers {
+  padding-top: 3.25rem;
+  padding-bottom: 1rem;
+}
+
+#word_recall {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  vertical-align: middle;
+  min-height: 10rem;
+}
+
+.answer {
+  width: 150px;
+}
+
+.answer_ms {
+  width: 200px;
+}
+
+.form-control{
+  text-align: center;
+  max-width: 9rem;
+}
+
+.form-row {
+  padding-bottom: 0.5rem;
+}
+
+form {
+    display: inline-block;
+}
+
+.slider {
+  max-width: 50rem;
+}
+
+.rangeslider,
+.rangeslider__fill {
+  display: block;  
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+.rangeslider {
+  background: #e6e6e6;
+  position: relative;
+}
+.rangeslider--horizontal {
+  height: 1px;
+  width: 100%;
+}
+.rangeslider--disabled {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
+  opacity: 0.4;
+}
+.rangeslider__fill {
+  background: #de2d40;
+  position: absolute;
+}
+.rangeslider--horizontal .rangeslider__fill {
+  top: 0;
+  height: 100%;
+}
+.rangeslider__handle {
+  background: orange;
+  color: #FFFFFF;  
+  cursor: pointer;
+  display: inline-block;
+  width: 5.2em;
+  height: 2.2em;
+  position: absolute;    
+  -moz-border-radius: 22px;
+  -webkit-border-radius: 22px;
+  border-radius: 22px;    
+  line-height: 2.2em;
+  text-align: center;
+}
+.rangeslider--horizontal .rangeslider__handle {
+  top: -15px;
+  touch-action: pan-y;
+  -ms-touch-action: pan-y;
+}
+input[type="range"]:focus + .rangeslider .rangeslider__handle {
+  -moz-box-shadow: 0 0 8px rgba(255, 0, 255, 0.9);
+  -webkit-box-shadow: 0 0 8px rgba(255, 0, 255, 0.9);
+  box-shadow: 0 0 8px rgba(255, 0, 255, 0.9);
+}
+
+button {
+  margin-right: 12px;
+  margin-left: 12px;
+}
+
+footer {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+footer p {
+  margin-bottom: .25rem;
+}
+
+

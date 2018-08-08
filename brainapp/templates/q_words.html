@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>brainHealthDx - Question 22 of 42</title>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/question.css')}}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+  </head>
+
+  <body>
+
+    <!-- This is the navigation bar at the top of the page -->
+    <!-- For the test this is only Home -->
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="/">brain<span style="color: orange">Health</span>Dx</a>
+        <div class="collapse navbar-collapse" id="top_navbar">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/home.html" data-confirm="Click OK if you would like to end the test, otherwise Cancel to continue.">Home</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main role="main">
+
+      <!-- This is a Bootstrap jumbotron section that has the Question Number -->
+      <!-- Need to set the Question Number value and text-->
+      <section class="jumbotron text-center">
+        <div class="container">
+          <h3 class="jumbotron-heading">Question 22 of 42 (Part 2 of 3)</h3>
+        </div>
+      </section>
+
+      <!-- This is a Bootstrap starter-template section that has the Question and Answers -->
+      <section class="starter-template bg-light text-center">
+        <!-- Set Question text here -->
+        <div class="container" id="question">
+          <h2 id="word"></h2>
+          <h5 id="test_recall"></h5>
+        </div>
+        <!-- Set the number of Answers and Answer text here -->
+        <div class="container" id="answers">
+          <!-- Not used
+          <button class="btn btn-outline-dark btn-lg answer" type="button" id="answer1">Yes</button>
+          <button class="btn btn-outline-dark btn-lg answer" type="button" id="answer2">No</button>
+          <button class="btn btn-outline-dark btn-lg answer" type="button" id="answer3">No</button>
+          <button class="btn btn-outline-dark btn-lg answer" type="button" id="answer4">No</button>
+          -->
+        </div>
+      </section>
+
+      <!-- This is a Bootstrap starter-temlate section that has the Next button -->
+      <!-- Set the href for the next Question here -->
+      <section class="starter-template bg-dark next">
+        <div class="container"  id="bottom_navbar">
+          <button class="btn btn-secondary answer float-right" style="visibility: hidden" type="button" id="next" value=0>Test Recall</button>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="text-muted">
+      <div class="container">
+        <p>&copy; brainHealthDx 2018</p>
+       </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+      Note: This is loaded locally, but could be connected via URL
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="{{ url_for('static', filename='js/jquery-3.3.1.js')}}"></script>
+    <script>window.jQuery || document.write('<script src="{{ url_for('static', filename='js/jquery-3.3.1.js')}}"><\/script>')</script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
+    <script type="text/javascript">
+
+      // This code checks whether or not the user wants to quit mid test
+      $(document).on('click', ':not(form)[data-confirm]', function(e){
+          if(!confirm($(this).data('confirm'))){
+              e.stopImmediatePropagation();
+              e.preventDefault();
+          }
+      });
+
+      // Define the possible word lists
+      var words1 = ['Hotel','River','Tree','Skin','Gold','Market','Paper','Child','King','Book']
+      var words2 = ['Sky','Ocean','Flag','Dollar','Wife','Machine','Home','Earth','College','Butter']
+      var words3 = ['Woman','Rock','Blood','Corner','Shoes','Letter','Girl','House','Valley','Engine']
+      var words4 = ['Water','Church','Doctor','Palace','Fire','Garden','Sea','Village','Baby','Table']
+      // Set the date we're counting down to
+      var countDownDate = new Date().getTime() + 11 * 2000;
+
+      // Some how select the word list
+      var wordlist = words1;
+
+      // Update the count down every 1 second
+      var x = setInterval(function() {
+
+          // Get todays date and time
+          var now = new Date().getTime();
+
+          // Find the distance between now an the count down date
+          var distance = countDownDate - now;
+
+          //
+          document.getElementById("word").innerHTML = wordlist.pop();
+
+         // If the count down is finished, write some text
+          if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("word").innerHTML = "";
+            document.getElementById("test_recall").innerHTML = "That completes the list. Now click 'Test Recall' to see how many words you can remember.";
+            document.getElementById("next").style.visibility = "visible";
+          }
+
+      }, 2000);
+
+      // Define a variable for each of the buttons on the page
+      var bnext = document.getElementById("next");
+
+      // Function to pass response variables
+      function addParametersToURL(){
+          var date = new Date();
+          var timestamp = date.getTime();
+          var curr_params = location.href.split('?');
+          var curr_params = '?' + curr_params[1];
+          return curr_params;
+      }
+
+      // On the click of Next button pass responses to the next html page
+      bnext.onclick = function() {
+          // Set the location for the next Question here -->
+          window.location = "/q_words_recall.html" + addParametersToURL();
+      }
+
+
+    </script>
+
+  </body>
+</html>

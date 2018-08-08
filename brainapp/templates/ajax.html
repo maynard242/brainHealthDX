@@ -1,0 +1,38 @@
+<html>
+<head>
+    <script src="{{ url_for('static', filename='js/jquery-3.3.1.js')}}"></script>
+    <script type="text/javascript" defer>
+
+    function caller() {
+          ajax(window.location.search.substring(1))
+    }
+
+    function ajax(params) {
+        //var fakeparams = "{\"a\":\"1\"}"
+        let data = decodeURIComponent(params)
+        console.log(data)
+        $.ajax({
+            type: "POST",
+            url: "/classifier",
+            contentType: "application/json",
+            data: data,
+          }).done(function (result) {
+            console.log('success')
+            $('#result').text(result)
+        })
+    }
+
+    $(document).ready(function () {
+         console.log('document is ready')
+         caller();
+     });
+
+     </script>
+
+ </head>
+
+ <body>
+     <div id="result"></div>
+ </body>
+
+ </html>

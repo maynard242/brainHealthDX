@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>brainHealthDx - What is Dementia</title>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/general.css')}}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+  </head>
+
+  <body>
+
+    <!-- This is the navigation bar at the top of the page -->
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="/">brain<span style="color: orange">Health</span>Dx</a>
+        <div class="collapse navbar-collapse" id="navbar1">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/home.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-item nav-link dropdown-toggle" href="/" id="dropdown_test" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Our Test</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown_test">
+                <a class="dropdown-item" href="/how.html">How it works</a>
+                <a class="dropdown-item" href="/take.html">Take our test</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown active">
+              <a class="nav-item nav-link dropdown-toggle" href="/" id="dropdown_science" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">The Science</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown_science">
+                <a class="dropdown-item active" href="/dementia.html">What is Dementia</a>
+                <a class="dropdown-item" href="/data.html">The Data</a>
+                <a class="dropdown-item" href="/model.html">Creating our Test</a>
+                <a class="dropdown-item" href="/factors.html">Contributing Factors</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/privacy.html">Privacy</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/about_us.html">About Us</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main role="main">
+
+      <section class="jumbotron text-center">
+        <div class="container"><h1>What is Dementia?</h1>
+          <p class="lead text-muted">Dementia affects a person's thinking, their behaviour and their ability to perform everyday tasks.</p>
+        </div>
+      </section>
+
+      <section class="starter-template bg-light">
+        <div class="container">
+
+          <h4>Why Brain Health?</h4>
+          <p class="lead">Brain health is important to your life. It allows you to recognize your family and friends, make decisions, and perform everyday tasks like eating. However, as your get older, scientific research has shown that your brain health can suffer from a brain disease called dementia.<br><br></p>
+
+          <h4>Why should you care about Dementia?</h4>
+          <p class="lead">Dementia is a leading brain disease that’s progressive, irreversible, and has no cure. Currently, nearly 50 million people worldwide have dementia and over 70 million will have it by 2030.<br><br></p>
+          <div class="thumbnail">
+            <img src="{{ url_for('static', filename='images/dementia.png') }}" width="1000" height="500" class="center">
+          </div>
+          <p class="lead"><br>Dementia is not a part of “normal” aging. It’s a major cause of disability, dependency, and stress for families. Current medical procedures for diagnosing dementia are often complex and expensive.<br><br></p>
+
+          <h4>Why brain<span style="color: orange">Health</span>Dx?</h4>
+          <p class="lead">brain<span style="color: orange">Health</span>Dx is a simple and accessible test that integrates rigorous scientific research and advanced data science to assess brain health. We work hard to ensure our test gives you high-quality information about your brain health that’s scientifically-grounded, data-driven, and ethically-mindful.<br><br></p>
+          <p class="lead">While our goal is not to replace medical assessments given by medical experts, we hope brain<span style="color: orange">Health</span>Dx helps reduce barriers to evaluating brain health and encourages those who may be at risk of dementia to proactively seek preventative care. brain<span style="color: orange">Health</span>Dx seeks to empower you to live fulfilling and healthy lives by allowing you to easily and quickly evaluate your brain health—wherever, whenever.<br><br></p>
+          <p class="lead">Want to know more about your brain health? <a href="/take.html">Take our Test</a>.<br><br></p>
+
+        
+
+        </div>
+      </section>
+    </main>
+
+    <footer class="text-muted">
+      <div class="container">
+        <p class="float-right">
+          <a href="#">Back to top</a>
+        </p>
+        <p>&copy; brainHealthDx 2018</p>
+       </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+      Note: This is loaded locally, but could be connected via URL
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="{{ url_for('static', filename='js/jquery-3.3.1.js')}}"></script>
+    <script>window.jQuery || document.write('<script src="{{ url_for('static', filename='js/jquery-3.3.1.js')}}"><\/script>')</script>
+    <script src="{{ url_for('static', filename='js/popper.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
+
+  </body>
+</html>

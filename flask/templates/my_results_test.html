@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>brainHealthDx - Results</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/general.css" rel="stylesheet">
+    <!-- Zingchart reference -->
+    <script src="js/zingchart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" ></script>
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+  </head>
+
+  <body>
+
+    <!-- This is the navigation bar at the top of the page -->
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#">brain<span style="color: orange">Health</span>Dx</a>
+        <div class="collapse navbar-collapse" id="navbar1">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-item nav-link dropdown-toggle" href="#" id="dropdown_test" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">The Test</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown_test">
+                <a class="dropdown-item" href="how.html">How it works</a>
+                <a class="dropdown-item" href="take.html">Take the test</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-item nav-link dropdown-toggle" href="#" id="dropdown_science" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">The Science</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown_science">
+                <a class="dropdown-item" href="data.html">The Data</a>
+                <a class="dropdown-item" href="model.html">Model Construction</a>
+                <a class="dropdown-item" href="factors.html">Contributing Factors</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="privacy.html">Privacy</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about_us.html">About Us</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main role="main">
+
+      <section class="jumbotron text-center">
+        <div class="container">
+          <h1 class="jumbotron-heading">Your Results</h1>
+          <p class="lead text-muted">Brain health is important to your quality of life</p>
+        </div>
+      </section>
+
+      <section class="starter-template bg-light">
+        <div class="container">
+          
+          <h3>The Results<br></h3>
+          <p class="lead" id="result_comment"></p>
+          <p class="lead">Consistent with our <a href="#disclaimer">disclaimer</a> if you remain concerned about your brain health you should consult a medical doctor for a qualified medical diagnosis.</p>
+          <div id ="chart1"></div>
+          <h5 id="disclaimer">Disclaimer</h5>
+          <p class="lead">This test serves to provide you with a fast and free understanding of your current brain health. The model is calibrated using medical diagnoses, however, the results do not serve as a medical diagnosis. If the results indicate that your brain health is less than satisfactory we recommend that you seek further more detailed medical diagnosis.</p>
+        </div>
+ 
+      </section>
+
+    </main>
+
+    <footer class="text-muted">
+      <div class="container">
+        <p class="float-right">
+          <a href="#">Back to top</a>
+        </p>
+        <p>&copy; brainHealthDx 2018</p>
+       </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+      Note: This is loaded locally, but could be connected via URL
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery-3.3.1.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-3.3.1.js"><\/script>')</script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <script>
+      // This ensures the page loads at the top first
+      $(document).ready(function(){
+          $(this).scrollTop(0);
+          });
+    </script>
+
+    <!-- This runs after the page has loaded as a result of the 'defer' -->
+    <script type="text/javascript" defer>
+
+    function caller() {
+ 
+              // Dummy results list - remove when it is working properly
+              var curr_results = ["0","86","75","25","75","94","75"];
+              console.log(curr_results);
+      
+
+    }
+
+    function hello() {
+
+              console.log(curr_results);
+              // Separate out the results into variables
+              var dx_risk = parseInt(curr_results[0]);
+              var my_cog = curr_results[1];
+              var pop_cog = curr_results[2];
+              var my_phys = curr_results[3];
+              var pop_phys = curr_results[4];
+              var my_living = curr_results[5];
+              var pop_living = curr_results[6];
+
+              // If brain health is good set up the parameters
+              if (dx_risk == 0) {
+                var pointer = "green";
+                var needle = 17;
+                document.getElementById("result_comment").innerHTML = "Your results indicate that your brain health is in the normal range for your age.";
+              };
+
+              // If brain health is mixed set up the parameters
+              if (dx_risk == 1) {
+                console.log('made it');
+                var pointer = "yellow";
+                var needle = 50;
+                document.getElementById("result_comment").innerHTML = "Your results indicate that your brain health is in the mixed range for your age.";
+              };
+
+              // If brain health is poor set up the parameters
+              if (dx_risk == 2) {
+                var pointer = "red";
+                var needle = 83;
+                document.getElementById("result_comment").innerHTML = "Your results indicate that your brain health is less than satisfactory for your age.";
+              };
+
+              var chartData1 = {
+                "globals":{"fontFamily":'Roboto'}, // Sets the global font-family
+                "graphset":[
+                  
+                  // First graph
+                  {
+                  "type":"bar",  // Specify your chart type here.
+                  "backgroundColor":"none",
+                  "plotarea":{"backgroundColor":"transparent"},
+                  "x": "45%",
+                  "y": "5%",
+                  "height": "70%",
+                  "width": "55%",
+                  "title": {"text": 'Your Brain Health Summary'},     // Adds a title to your chart
+                  "plot":{
+                        "hover-mode":"node",
+                        "hover-state":{"background-color":"red"}
+                      },
+                  "legend":{
+                        "layout":"1x2", //row x column
+                        "x":"36%",
+                        "y":"88%"
+                        },
+                  "plotarea":{
+                    "margin-bottom":"20%",
+                    "margin-top":"13%"
+                  },
+                  "scale-x": {"values": ["Cognitive Health","Physical Health","Living Health"]},
+                  "scale-y": {"values": "0:100:10"},
+                  "series":[  // Insert your series data here.
+                      {"values": [my_cog, my_phys, my_living],"background-color":"orange","text":"You"},
+                      {"values": [pop_cog, pop_phys, pop_living],"background-color":"grey","text":"Average"}
+                      ]
+                  },
+                
+                  // Second graph
+                  {
+                  "type":"gauge",
+                  "backgroundColor":"none",
+                  "plotarea":{"backgroundColor":"transparent"},
+                  "x": "0%",
+                  "y": "5%",
+                  "height": "70%",
+                  "width": "40%",
+                  "title": {"text": 'Your Dementia Risk'},     // Adds a title to your chart
+                  "scale-r":{
+                      "aperture": 220,           // Specify number of degrees in gauge arc.
+                      "tick": {
+                          "line-color":"white",
+                          "line-style":"solid", //solid, dashed, or dotted
+                          "line-width":5,
+                          "size":33,
+                          "placement":"inner" //outer, inner, or cross},  // Turn on or off the tick marks    
+                          },
+                      "values": "0:99:33",        // Provide min/max/step scale values - doing 1/3-1/3-1/3.
+                      "labels": ['Low','','','High'],     // Make the labels all blank
+                      "item":{    //Scale Label Styling
+                          "font-color":"black",
+                          // "font-family":"Helvetica",
+                          "font-size":14,
+                          "font-weight":"bold",    //or "normal"
+                          //"font-style":"normal",    //or "italic"
+                          "offset-r": "-1"    //To adjust the placement of your scale labels.
+                          //"angle":"auto"    //To adjust the angle of your scale labels.
+                          },
+                      "center": { 
+                          "size": 5,              // This sets the size of the pivot point circle
+                          "background-color": pointer,
+                          "border-color": pointer
+                          },
+                      "ring":{
+                          "size": 30,              // This sets the size of the thickness of the gauge ring
+                          "background-color": "white",
+                          "rules":[
+                              {"rule":"%v >= 0 && %v <= 33","background-color":"green","border-color":"white"},
+                              {"rule":"%v >= 33 && %v <= 66", "background-color":"yellow","border-color":"white"},
+                              {"rule":"%v >= 66 && %v <= 99", "background-color":"red","border-color":"white"}
+                              ]
+                          }
+                      },
+                  "series": [{
+                      "values": [needle],               // Where the need points
+                      "csize": "7.5%",              // Needle Indicator Width
+                      "size": "75%",                // Needle Indicator Length
+                      "indicator": [10,0,0,0,0],    // Control the type of needle
+                      "background-color": pointer   // Colour of the needle
+                      }]
+                  }
+                  // End of the graphset
+                  ]
+              
+              };
+
+              zingchart.render({ // Render Method[3]
+                id: "chart1",
+                data: chartData1,
+                height: "50%",
+                width: "100%"
+              });
+
+          }
+
+    $(document).ready(function () {
+         console.log('document is ready');
+         caller();
+        });
+
+    </script>
+
+
+
+
+  </body>
+</html>

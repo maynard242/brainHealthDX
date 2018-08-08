@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>brainHealthDx - Home Page</title>
+    <!-- Bootstrap core CSS -->
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/general.css')}}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <script src="{{ url_for('static', filename='js/jquery-3.3.1.js')}}"></script>
+    <script type="text/javascript" defer>
+
+    function caller() {
+          ajax(window.location.search.substring(1))
+    }
+
+    function ajax(params) {
+        //var fakeparams = "{\"a\":\"1\"}"
+        let data = decodeURIComponent(params)
+        console.log(data)
+        $.ajax({
+            type: "POST",
+            url: "/classifier",
+            contentType: "application/json",
+            data: data,
+          }).done(function (result) {
+            console.log('success')
+            $('#result').text(result)
+        })
+    }
+
+    $(document).ready(function () {
+         console.log('document is ready')
+         caller();
+    });
+
+  </script>
+
+  </head>
+
+  <body>
+
+     <div id="result"></div>
+     <p> This was a success. <p>
+
+     <!-- Bootstrap core JavaScript
+       Note: This is loaded locally, but could be connected via URL
+     ================================================== -->
+     <!-- Placed at the end of the document so the pages load faster -->
+     <script src="{{ url_for('static', filename='js/popper.min.js')}}"></script>
+     <script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
+
+   </body>
+
+</html>

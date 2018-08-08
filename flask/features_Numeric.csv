@@ -1,0 +1,34 @@
+old_column,new_column,question_type,question
+g1409,g1409,numeric10,smoke_high_packs
+g1416,g1416,numeric10,alcohol_dayspw
+g1428,g1428,numeric10,height feet
+g1268,g1268,numeric100,cancer_num
+g1340,g1340,numeric100,falls_num
+g1402,g1402,numeric100,smoke_num_pack
+g1404,g1404,numeric100,smoke_age
+g1406,g1406,numeric100,smoke_start_years
+g1413,g1413,numeric100,smoke_stop_age
+g1417,g1417,numeric100,alcohol_dayspq
+g1418,g1418,numeric100,alcohol_binge
+g1852,g1852,numeric100,tics
+g3060,g3060,numeric100,
+g1401,g1401,numeric1000,smoke_num
+g1408,g1408,numeric1000,smoke_high
+g1425,g1425,numeric1000,weight pounds
+g1429,g1429,numeric1000,height inches
+g1806,g1806,numeric1000,
+g1807,g1807,numeric1000,
+g1808,g1808,numeric1000,
+g1809,g1809,numeric1000,
+g1810,g1810,numeric1000,
+g2940,g2940,numeric1000,
+g1274,g1274,numeric10000,cancer_year
+g1299,g1299,numeric10000,heartattack_year
+g1321,g1321,numeric10000,stroke_year
+g1405,g1405,numeric10000,smoke_start_year
+g1412,g1412,numeric10000,smoke_stop_year
+g1805,g1805,numeric10000,
+g1814,g1814,numeric10000,
+g2652,g2652,numeric10000,medical expenses
+g2996,g2996,numeric10000,
+g2999,g2999,numeric10000,

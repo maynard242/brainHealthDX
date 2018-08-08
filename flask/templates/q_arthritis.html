@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>brainHealthDx - Question 10 of 42</title>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/question.css')}}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+  </head>
+
+  <body>
+
+    <!-- This is the navigation bar at the top of the page -->
+    <!-- For the test this is only Home -->
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="/">brain<span style="color: orange">Health</span>Dx</a>
+        <div class="collapse navbar-collapse" id="top_navbar">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/home.html" data-confirm="Click OK if you would like to end the test, otherwise Cancel to continue.">Home</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main role="main">
+
+      <!-- This is a Bootstrap jumbotron section that has the Question Number -->
+      <!-- Need to set the Question Number text-->
+      <section class="jumbotron text-center">
+        <div class="container">
+          <input type="hidden" id="question_number" value="10">
+          <h3 class="jumbotron-heading">Question 10 of 42</h3>
+        </div>
+      </section>
+
+      <!-- This is a Bootstrap starter-template section that has the Question and Answers -->
+      <section class="starter-template bg-light text-center">
+        <!-- Set Question text here -->
+        <div class="container" id="question">
+          <h4>In the past 2 years, have you seen a doctor specifically for arthritis or rheumatism?</h4>
+        </div>
+        <!-- Set the number of Answers and Answer text here -->
+        <div class="container" id="answers">
+          <button class="btn btn-outline-dark btn-lg answer" type="button" id="answer1">Yes</button>
+          <button class="btn btn-outline-dark btn-lg answer" type="button" id="answer2">No</button>
+          <!-- Not used
+          <button class="btn btn-outline-dark btn-lg answer" type="button" id="answer3">No</button>
+          <button class="btn btn-outline-dark btn-lg answer" type="button" id="answer4">No</button>
+          -->
+        </div>
+      </section>
+
+      <!-- This is a Bootstrap starter-temlate section that has the Next button -->
+      <!-- Set the href for the next Question here -->
+      <section class="starter-template bg-dark next">
+        <div class="container"  id="bottom_navbar">
+          <button class="btn btn-secondary answer float-right" type="button" id="next" value=0>Next</button>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="text-muted">
+      <div class="container">
+        <p>&copy; brainHealthDx 2018</p>
+       </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+      Note: This is loaded locally, but could be connected via URL
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="{{ url_for('static', filename='js/jquery-3.3.1.js')}}"></script>
+    <script>window.jQuery || document.write('<script src="{{ url_for('static', filename='js/jquery-3.3.1.js')}}"><\/script>')</script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
+    <script type="text/javascript">
+
+      // This code checks whether or not the user wants to quit mid test
+      $(document).on('click', ':not(form)[data-confirm]', function(e){
+          if(!confirm($(this).data('confirm'))){
+              e.stopImmediatePropagation();
+              e.preventDefault();
+          }
+      });
+
+      // This is the function that determines the value of the answer and does SOMETHING!
+      function record_answer() {
+          console.log(bnext.value);
+      }
+
+      // Define a variable for each of the buttons on the page
+      var b1 = document.getElementById("answer1");
+      var b2 = document.getElementById("answer2");
+      var question = document.getElementById("question_number"); // question number
+      var bnext = document.getElementById("next"); // answer value
+
+      // Function to pass response variables
+      function addParametersToURL(q,a){
+          var date = new Date();
+          var timestamp = date.getTime();
+          var curr_params = location.href.split('?');
+          if(curr_params.length==1){
+            curr_params = '?{' + '"' + q + '"' + ':' + a;
+          }
+          if(curr_params.length==2){
+            curr_params = '?' + curr_params[1] + ',' + '"' + q + '"' + ':' + a;
+          }
+          console.log(curr_params);
+          return curr_params;
+      }
+
+      // On the click of Next button pass responses to the next html page
+      bnext.onclick = function() {
+          // Get the question and answer values
+          var a = bnext.value;
+          var q = question.value;
+          // Check if a response has been made
+          if (a > 0){
+            // Set the location for the next Question here -->
+            window.location = "/q_fallen.html" + addParametersToURL(q,a);
+          } else {
+            alert('You have not made a selection yet. Please try again.');
+          }
+      }
+
+      // Set the background of a clicked answer button to orange or nothing otherwise
+      b1.onclick = function() {
+        b1.style.background = "orange";
+        b2.style.background = "";
+        console.log('1');
+        bnext.value = 1;
+      }
+
+      b2.onclick = function() {
+        b1.style.background = "";
+        b2.style.background = "orange";
+        console.log('5');
+        bnext.value = 5;
+      }
+
+    </script>
+
+  </body>
+</html>

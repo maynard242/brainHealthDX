@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>brainHealthDx - Data</title>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/general.css')}}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+  </head>
+
+  <body>
+
+    <!-- This is the navigation bar at the top of the page -->
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="/">brain<span style="color: orange">Health</span>Dx</a>
+        <div class="collapse navbar-collapse" id="navbar1">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/home.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-item nav-link dropdown-toggle" href="/" id="dropdown_test" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Our Test</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown_test">
+                <a class="dropdown-item" href="/how.html">How it works</a>
+                <a class="dropdown-item" href="/take.html">Take our test</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown active">
+              <a class="nav-item nav-link dropdown-toggle" href="/" id="dropdown_science" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">The Science</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown_science">
+                <a class="dropdown-item" href="/dementia.html">What is Dementia</a>
+                <a class="dropdown-item active" href="/data.html">The Data</a>
+                <a class="dropdown-item" href="/model.html">Creating our Test</a>
+                <a class="dropdown-item" href="/factors.html">Contributing Factors</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/privacy.html">Privacy</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/about_us.html">About Us</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main role="main">
+
+      <section class="jumbotron text-center">
+        <div class="container">
+          <h1 class="jumbotron-heading">About the Data</h1>
+          <p class="lead text-muted">Quality data leads to informed decisions</p>
+        </div>
+      </section>
+
+      <section class="starter-template bg-light">
+        <div class="container">
+
+          <h3>The Source</h3>
+
+          <p class="lead">Your brain health is important to us, and we believe that you deserve high-quality information about it. To develop our test, we used data from the <a href="http://hrsonline.isr.umich.edu">Health and Retirement Survey</a> (HRS) to give you information about your brain health that’s scientifically-grounded, data-driven, and ethically-mindful.<br></p>
+
+          <p class="lead">There were a number of appealing features of the HRS data set that stood out to us: <br></p>
+        
+          <ul>
+            <li>
+            <p class="lead"><span class="mybold">Scientifically-grounded: </span>The US <a href="http://hrsonline.isr.umich.edu">Health and Retirement Survey</a> (HRS) is a national research study from the University of Michigan that’s supported by the US National Institute on Aging, and the US Social Security Administration. It’s led and overseen by prominent experts in health policy and medicine. <span class="mybold">The science is legitimate!</span><br></p>
+            </li>
+            <li>
+            <p class="lead"><span class="mybold">Data-driven: </span>Since 1990, the HRS has bi-annually collected invaluable data related to brain health from a national sample of roughly 20,000 people who are at least 50 years old in the US. It useds comprehensive and in-depth research interviews to gather rich data about diverse aspects of health including cognitive, physical and living health. The HRS gives results that are nationally-representative about the population in the US. <span class="mybold">It’s one of the richest datasets out there!</span><br></p>
+            </li>
+            <li>
+            <p class="lead"><span class="mybold">Ethically-mindful: </span>Because it’s important to make sure evaluations of brain health are as medically accurate as possible, the HRS includes a subsection that includes medical diagnoses of dementia made by an expert committee of prominent researchers and doctors in dementia. The data has integrity!<br></p>
+            </li>
+          </ul>
+
+          <p class="lead">For these reasons, we used the <a href="http://hrsonline.isr.umich.edu">Health and Retirement Survey</a> (HRS) to give you high-quality information about your brain health.</p>
+
+          <p class="lead">Want to know more about your brain health? <a href="/take.html">Take our Test!</a><br></p>
+
+          <p class="lead">For more information about the HRS, please visit <a href="http://hrsonline.isr.umich.edu">http://hrsonline.isr.umich.edu</a><br><br></p>
+
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="text-muted">
+      <div class="container">
+        <p class="float-right">
+          <a href="#">Back to top</a>
+        </p>
+        <p>&copy; brainHealthDx 2018</p>
+       </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+      Note: This is loaded locally, but could be connected via URL
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="{{ url_for('static', filename='js/jquery-3.3.1.js')}}"></script>
+    <script>window.jQuery || document.write('<script src="{{ url_for('static', filename='js/jquery-3.3.1.js')}}"><\/script>')</script>
+    <script src="{{ url_for('static', filename='js/popper.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
+  </body>
+</html>

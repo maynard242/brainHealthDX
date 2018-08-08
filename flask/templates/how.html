@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>brainHealthDx - How it works</title>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/general.css')}}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+  </head>
+
+  <body>
+
+    <!-- This is the navigation bar at the top of the page -->
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="/">brain<span style="color: orange">Health</span>Dx</a>
+        <div class="collapse navbar-collapse" id="navbar1">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/home.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown active">
+              <a class="nav-item nav-link dropdown-toggle" href="/" id="dropdown_test" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Our Test</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown_test">
+                <a class="dropdown-item active" href="/how.html">How it works</a>
+                <a class="dropdown-item" href="/take.html">Take our test</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-item nav-link dropdown-toggle" href="/" id="dropdown_science" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">The Science</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown_science">
+                <a class="dropdown-item" href="/dementia.html">What is Dementia</a>
+                <a class="dropdown-item" href="/data.html">The Data</a>
+                <a class="dropdown-item" href="/model.html">Creating our Test</a>
+                <a class="dropdown-item" href="/factors.html">Contributing Factors</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/privacy.html">Privacy</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/about_us.html">About Us</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main role="main">
+
+      <section class="jumbotron text-center">
+        <div class="container"><h1>How It Works</h1>
+          <p class="lead text-muted">What you need to know about taking our Test</p>
+        </div>
+      </section>
+
+      <section class="starter-template bg-light">
+        <div class="container">
+
+          <p class="lead">It’s great that you care about your brain health, and want to take our test. Our test is easy to do, and it’s not an IQ test. Here’s some information about what to expect.<br></p>
+
+          <h4>Duration</h4>
+          <p class="lead">Our Test should take about 15 minutes to do. For best results, complete our test in one go and answer the questions to the best of your ability. Once you submit your answer, it cannot be changed so think carefully before moving on.<br></p>
+
+          <h4>Questions</h4>
+          <p class="lead">Our test covers various topics from basic background information (age, education, etc.) to your cognitive, physical, and living health. All our questions are based on the <a href="http://hrsonline.isr.umich.edu">Health and Retirement Study</a> (HRS) from the University of Michigan. Please visit <a href="/data.html">The Science/The Data</a> for more information. 
+
+          <h3>Practice Questions</h3>
+
+          <p class="lead">The questions in our test are mostly multiple choice, but some also involve your input. Here are some examples:<br></p>
+
+          <h4>Multiple Choice Questions</h4>
+          <p class="lead">These questions require you to select the button of the most appropriate answer. Once you make a selection, you can change it until you confirm your answer by clicking the <span class="mybold">Next</span> button. Practice using your mouse to select an answer, and then change it for this example:<br></p>
+
+          <div class="container text-center" id="question">
+            <h4>Paris is the capital city of which country?</h4>
+          </div>
+
+          <div class="container text-center" id="answers">
+            <button class="btn btn-outline-dark btn-lg answer" type="button" id="answer1">Italy</button>
+            <button class="btn btn-outline-dark btn-lg answer" type="button" id="answer2">France</button>
+            <button class="btn btn-outline-dark btn-lg answer" type="button" id="answer3">Germany</button>
+          </div>
+
+          <h4><br>Participant Input Questions</h4>
+          <p class="lead">These questions require you to move the slider to the most appropriate answer. Practice using your mouse to move the slider to an answer for this example:<br></p>
+
+          <div class="container text-center" id="question">
+            <h4>How many sides are there on an octagon?</h4>
+            <span class="h2" id="amount-label">
+              <span class="pricing__dollar"> sides</span>
+            </span>
+          </div>
+          <!-- Set the number of Answers and Answer text here -->
+          <div class="container text-center text-muted" id="answers">
+            <p>Move the slider to the number of sides</p>
+            <br/>
+              <div class="container slider">
+              <!-- As seen here https://bootsnipp.com/snippets/featured/bootstrap-pricing-slider-donations -->
+                <input id="range-slider" type="range" min="3" max="12" step="1" value="5">
+              </div>
+          </div>
+
+          <h4><br>Moving to the Next Question</h4>
+          <p class="lead">Once you have selected the most correct answer you will then need to click the <span class="mybold">Next</span> button to move to the next question. The <span class="mybold">Next</span> button will look like this, you can click it, but it does nothing here.</p>
+
+        </div>
+      </section>
+
+      <section class="starter-template bg-dark next">
+        <div class="container"  id="bottom_navbar">
+          <button class="btn btn-secondary answer float-right" type="button" id="next">Next</button>
+        </div>
+      </section>
+
+      <section class="starter-template bg-light">
+        <div class="container">
+          <p class="lead">Remember once you have clicked the <span class="mybold">Next</span> button there is no going back, so choose your response carefully.<br><br></p>
+
+          <h3>Results</h3>
+          <p class="lead">After completing our test, you will see a summary report of your brain health (visit <a href="/model.html">The Science/Creating our Test</a> for information about how this report is created). The report includes your estimated risk of dementia, and scores in various health domains compared to the population in your age group. Our results are best calibrated for people who are at least 50 years old, and should only be used for informational purposes. Our results are not medical diagnoses. If you are having concerns about your brain health, please consult your doctor.<br><br></p>
+
+          <h3>Privacy</h3>
+          <p class="lead">We take your privacy very seriously so we don’t ask you for any information that could identify who you are. For more information about how we handle your information, please read our <a href="/privacy.html">Privacy Statement</a>.<br><br></p>
+
+
+          <h3>Ready to take our Test</h3>
+          <p class="lead">That’s it! You’re now ready to take <a href="/take.html">our Test</a>.</p>
+
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="text-muted">
+      <div class="container">
+        <p class="float-right">
+          <a href="#">Back to top</a>
+        </p>
+        <p>&copy; brainHealthDx 2018</p>
+       </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+      Note: This is loaded locally, but could be connected via URL
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="{{ url_for('static', filename='js/jquery-3.3.1.js')}}"></script>
+    <script>window.jQuery || document.write('<script src="{{ url_for('static', filename='js/jquery-3.3.1.js')}}"><\/script>')</script>
+    <script src="{{ url_for('static', filename='js/popper.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
+    <script src="https://cdn.jsdelivr.net/rangeslider.js/2.3.0/rangeslider.min.js"></script>
+    <script type="text/javascript">
+
+      // This code ......
+      $(document).ready(function() {
+
+          var $element = $('input[type="range"]');
+          var $handle;
+
+          $element.rangeslider({
+              polyfill: false,
+              onInit: function() {
+                  $handle = $('.rangeslider__handle', this.$range);
+                  updateHandle($handle[0], this.value);
+                  $("#amount-label").html(this.value +'<span class="pricing__dollar"> sides</span>');
+              }
+          }).on('input', function() {
+              updateHandle($handle[0], this.value);
+              $("#amount-label").html(this.value + '<span class="pricing__dollar"> sides</span>');
+          });
+
+          function updateHandle(el, val) {
+              el.textContent = val;
+          }
+
+          $('input[type="range"]').rangeslider();
+
+      });
+
+      // Define a variable for each of the buttons on the page
+      var b1 = document.getElementById("answer1");
+      var b2 = document.getElementById("answer2");
+      var b3 = document.getElementById("answer3");
+      var bnext = document.getElementById("next");
+
+      // Set the background of a clicked answer button to green or nothing otherwise
+      b1.onclick = function() {
+        b1.style.background = "orange";
+        b2.style.background = "";
+        b3.style.background = "";
+        bnext.value = 1;
+      }
+
+      b2.onclick = function() {
+        b1.style.background = "";
+        b2.style.background = "orange";
+        b3.style.background = "";
+        bnext.value = 2;
+      }
+
+      b3.onclick = function() {
+        b1.style.background = "";
+        b2.style.background = "";
+        b3.style.background = "orange";
+        bnext.value = 2;
+      }
+
+      // On the click of Next do nothing!
+      bnext.onclick = function() {
+        record_answer();
+      }
+
+
+
+    </script>
+  </body>
+</html>

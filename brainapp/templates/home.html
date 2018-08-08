@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>brainHealthDx - Home Page</title>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css')}}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+  </head>
+
+  <body class="text-center bg-picture">
+
+    <!-- This is the navigation bar at the top of the page -->
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="/">brain<span style="color: orange">Health</span>Dx</a>
+        <div class="collapse navbar-collapse" id="navbar1">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="/home.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-item nav-link dropdown-toggle" href="/" id="dropdown_test" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Our Test</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown_test">
+                <a class="dropdown-item" href="/how.html">How it works</a>
+                <a class="dropdown-item" href="/take.html">Take our test</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-item nav-link dropdown-toggle" href="/" id="dropdown_science" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">The Science</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown_science">
+                <a class="dropdown-item" href="/dementia.html">What is Dementia</a>
+                <a class="dropdown-item" href="/data.html">The Data</a>
+                <a class="dropdown-item" href="/model.html">Creating our Test</a>
+                <a class="dropdown-item" href="/factors.html">Contributing Factors</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/privacy.html">Privacy</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/about_us.html">About Us</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+
+      <main role="main" class="inner cover">
+        <div>
+          <img src="{{ url_for('static', filename='images/logo.png') }}" width="600px" class="center">
+        </div>
+        <h1 class="cover-heading" style="padding-bottom: 0.8rem">brain<span style="color: orange">Health</span>Dx</h1>
+        <p class="lead" style="padding-bottom: 0.8rem">Are you concerned about your brain health or want information about it? As we get older, science shows that brain health can suffer from a brain disease called dementia. Our simple data-driven and scientifically-based test will help you understand your brain health.</p>
+        <p class="lead">
+          <a href="/take.html" class="btn btn-lg btn-secondary">Take our test</a>
+        </p>
+      </main>
+
+      <footer class="text-muted" style="padding-bottom: 4rem">
+        <div class="container">
+          <p>&copy; brainHealthDx 2018</p>
+         </div>
+      </footer>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript
+      Note: This is loaded locally, but could be connected via URL
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="{{ url_for('static', filename='js/jquery-3.3.1.js')}}"></script>
+    <script>window.jQuery || document.write('<script src="{{ url_for('static', filename='js/jquery-3.3.1.js')}}"><\/script>')</script>
+    <script src="{{ url_for('static', filename='js/popper.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
+  </body>
+</html>

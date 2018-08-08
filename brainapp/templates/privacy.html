@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>brainHealthDx - Privacy Statement</title>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/general.css')}}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+  </head>
+
+  <body>
+
+    <!-- This is the navigation bar at the top of the page -->
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="/">brain<span style="color: orange">Health</span>Dx</a>
+        <div class="collapse navbar-collapse" id="navbar1">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/home.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-item nav-link dropdown-toggle" href="/" id="dropdown_test" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Our Test</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown_test">
+                <a class="dropdown-item" href="/how.html">How it works</a>
+                <a class="dropdown-item" href="/take.html">Take our test</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-item nav-link dropdown-toggle" href="/" id="dropdown_science" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">The Science</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown_science">
+                <a class="dropdown-item" href="/dementia.html">What is Dementia</a>
+                <a class="dropdown-item" href="/data.html">The Data</a>
+                <a class="dropdown-item" href="/model.html">Creating our Test</a>
+                <a class="dropdown-item" href="/factors.html">Contributing Factors</a>
+              </div>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/privacy.html">Privacy</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/about_us.html">About Us</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main role="main">
+
+      <section class="jumbotron text-center">
+        <div class="container">
+          <h1 class="jumbotron-heading">Our Privacy Statement</h1>
+          <p class="lead text-muted">Privacy matters to us and we know it matters to you</p>
+        </div>
+      </section>
+
+      <section class="starter-template bg-light">
+        <div class="container">
+
+          <h3>Our Privacy Commitment</h3>
+          <p class="lead">To perform this service we need to collect a wide variety of personal information about you. But don’t worry. We are committed to protecting your privacy, keeping your information safe and ensuring the security of your data.<br><br></p>
+
+          <h4>What information do we collect?</h4>
+          <p class="lead">We collect information about your personal situation including demographic and socioeconomic data. We also perform basic cognitive tests designed to assess your brain health.<br><br></p>
+
+          <h4>How do we collect your information?</h4>
+          <p class="lead">We collect your information solely by asking you a series of questions. You can choose not to answer the questions (or quit altogether), but if you choose not to we will be unable to make an assessement of your brain health.<br><br></p>
+
+          <h4>How do we use your information?</h4>
+          <p class="lead">We use your information in our model to provide you results about your brain health. At some point if we have sufficient new information we may use your information with all other participants data to recalibrate our model. The output of our model will never produce anything other than the participant's own results or those of the entire population.<br><br></p>
+
+          <h4>When do we share your informaton?</h4>
+          <p class="lead">We never share your information with any other third parties.<br><br></p>
+
+          <h4>How you can make a privacy complaint?</h4>
+          <p class="lead">If you believe that a HIPAA-covered entity or its business associate violated your (or someone else’s) health information privacy rights or committed another violation of the Privacy, Security, or Breach Notification Rules, you may file a complaint with the Office for Civil Rights (OCR). You can find more information about how to file a complaint at <a href="https://www.hhs.gov/hipaa/filing-a-complaint/index.html">Health.gov</a><br><br></p>
+
+          <h4>How to contact us</h4>
+          <p class="lead">If you have any questions in relation to this <span class="mybold">Privacy Statement</span> or our management of your information please email us using our contact details on our <a href="/about_us.html">About Us</a> page<br><br></p>
+
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="text-muted">
+      <div class="container">
+        <p class="float-right">
+          <a href="#">Back to top</a>
+        </p>
+        <p>&copy; brainHealthDx 2018</p>
+       </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+      Note: This is loaded locally, but could be connected via URL
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="{{ url_for('static', filename='js/jquery-3.3.1.js')}}"></script>
+    <script>window.jQuery || document.write('<script src="{{ url_for('static', filename='js/jquery-3.3.1.js')}}"><\/script>')</script>
+    <script src="{{ url_for('static', filename='js/popper.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
+  </body>
+</html>
